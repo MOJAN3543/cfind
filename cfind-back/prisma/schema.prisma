@@ -1,0 +1,19 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model gsmdata {
+  GSM_ID  String @id
+  GSE_ID  String
+  disease   String
+  tissue  String
+  genotype  String
+  replicate_num   String
+  age   String
+  species   String
+}

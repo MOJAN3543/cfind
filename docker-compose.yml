@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+
+  cfind-front:
+    build:
+      context: ./cfind-front
+    container_name: cfind-front
+    ports:
+      - "${FRONTEND_PORT}:80"
+    depends_on:
+      - cfind-back
+  cfind-back:
+    build:
+      context: ./cfind-back
+    container_name: cfind-back
+    ports:
+      - "${BACKEND_PORT}:${BACKEND_PORT}"
+    environment:
+      DATABASE_URL: ${DATABASE_URL}
+    depends_on:
+      - cfind-db
+  cfind-db:
+    image: mysql:8
+    container_name: cfind-db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DATABASE_PW}
+      MYSQL_DATABASE: cfind
+    ports:
+      - "${MYSQL_PORT}:${MYSQL_PORT}"
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+volumes:
+  mysql-data:
