@@ -21,9 +21,9 @@ const DataElement = ({
 }: GSMData) => {
     return (
         <DataElementWrapper>
-            {Object.entries(props).map(([_, value]) => {
+            {Object.entries(props).map(([_, value], index) => {
                 return (
-                    <p key={value}>
+                    <p key={value + index}>
                         {value}
                     </p>
                 )
