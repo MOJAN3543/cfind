@@ -1,6 +1,6 @@
 #!/bin/sh
 
-sleep 10
+sleep 15
 npx prisma generate
 npx prisma db push
 npm run start
