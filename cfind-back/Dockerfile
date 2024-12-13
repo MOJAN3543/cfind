@@ -4,4 +4,4 @@ WORKDIR /app
 COPY . .
 RUN npm install
 
-CMD ["./migrate-and-start.sh"]
+CMD ["/bin/sh", "./migrate-and-start.sh"]
