@@ -7,5 +7,7 @@ export type GSMData = {
     genotype: string;
     replicate_num: string;
     age: string;
+    gender: string;
+    lvef: string;
     species: string;
 }

@@ -12,8 +12,10 @@ model gsmdata {
   GSE_ID  String
   disease   String
   tissue  String
-  genotype  String
-  replicate_num   String
-  age   String
+  genotype  String @default("N/A")
+  replicate_num   String @default("N/A")
+  age   String @default("N/A")
+  gender String @default("N/A")
+  lvef String @default("N/A")
   species   String
 }
