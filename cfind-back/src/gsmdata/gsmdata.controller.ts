@@ -11,7 +11,7 @@ export class GsmdataController {
     return this.gsmdataService.create(createGsmdatumDto);
   }
 
-  @Get()
+  @Get('/query')
   findByQuery(@Query() query: gsmdataPaginationQueryDto){
     return this.gsmdataService.findByQuery(query);
   }
@@ -25,6 +25,11 @@ export class GsmdataController {
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateGsmdatumDto: Prisma.gsmdataUpdateInput) {
     return this.gsmdataService.update(id, updateGsmdatumDto);
+  }
+
+  @Delete()
+  removeAll(){
+    return this.gsmdataService.removeAll();
   }
 
   @Delete(':id')

@@ -41,4 +41,8 @@ export class GsmdataService {
       },
     });
   }
+
+  removeAll(){
+    return this.prismaService.gsmdata.deleteMany({});
+  }
 }
